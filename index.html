@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD com Firebase e Javascript </title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  
+
+  <div class="container">
+    <header>
+      <h3>Lista de Documentos</h3>
+    </header>
+
+    <div class="table-wrapper">
+      <table class="table-users">
+        <tr>
+          <th>Primeiro Nome</th>
+          <th>Segundo Nome</th>
+          <th>Telefone</th>
+          <th>E-mail</th>
+          <th>Ação</th>
+        </tr>
+      </table>
+      <button class="btn btn-add"> Criar Documento </button>
+    </div>
+
+    <!-- Add Modal -->
+    <div class="add-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-header"><h3>Criar Documento</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="text" name="firstName" placeholder="Primeiro Nome">
+            <input type="text" name="lastName" placeholder="Segundo Nome">
+            <input type="number" name="phone" placeholder="Telefone">
+            <input type="email" name="email" placeholder="Email">
+            <button class="btn btn-modal">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editar Modal -->
+  <div class="edit-modal modal-wrapper">
+    <div class="modal">
+      <div class="modal-header"><h3>Editar Documento</h3></div>
+      <div class="modal-body">
+        <form class="form" autocomplete="off">
+          <input type="text" name="firstName" placeholder="Primeiro Nome">
+          <input type="text" name="lastName" placeholder="Segundo Nome">
+          <input type="text" name="phone" placeholder="Telefone">
+          <input type="email" name="email" placeholder="Email">
+          <button class="btn btn-modal">submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAmczQF-J74ogZvD5ydg64P6LwzzJMgxZ8",
+      authDomain: "crud-61df0.firebaseapp.com",
+      projectId: "crud-61df0",
+      storageBucket: "crud-61df0.appspot.com",
+      messagingSenderId: "962167161701",
+      appId: "1:962167161701:web:804d8211fcc67997f5d78c"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="./script.js"></script>
+  
+
+  <!--
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAmczQF-J74ogZvD5ydg64P6LwzzJMgxZ8",
+    authDomain: "crud-61df0.firebaseapp.com",
+    projectId: "crud-61df0",
+    storageBucket: "crud-61df0.appspot.com",
+    messagingSenderId: "962167161701",
+    appId: "1:962167161701:web:804d8211fcc67997f5d78c"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+-->
+
+
+</body>
+
+</html>
